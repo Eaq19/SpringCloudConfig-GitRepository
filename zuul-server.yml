@@ -15,7 +15,7 @@ zuul:
     socket-timeout-millis: 20000
     routes:
       auth-service:
-        path: /uaa/** #path that will be intercepted
-        url: auth-service #which url the request will e mapped to
+        path: /product/** #path that will be intercepted
+        url: product-service #which url the request will e mapped to
         stripPrefix: false #if zuul should replace the "/uaa/" segment
         sensitiveHeaders:
