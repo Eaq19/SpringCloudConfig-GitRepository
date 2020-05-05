@@ -1,0 +1,21 @@
+server:
+  port: ${port:9090}
+eureka:
+  instance:
+    hostname: localhost
+    #when the application registers with eureka, it uses its IP address rather than its hostname
+    #prefer-ip-address: true
+  client:
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:9093/eureka/
+zuul:
+  ignoredServices: '*'
+  host:
+    connect-timeout-millis: 20000
+    socket-timeout-millis: 20000
+    routes:
+      auth-service:
+        path: /uaa/** #path that will be intercepted
+        url: auth-service #which url the request will e mapped to
+        stripPrefix: false #if zuul should replace the "/uaa/" segment
+        sensitiveHeaders:
