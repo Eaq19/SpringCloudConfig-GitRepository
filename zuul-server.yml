@@ -17,5 +17,3 @@ zuul:
       product-services:
         path: /product/** #path that will be intercepted
         serviceId: product-services #which url the request will e mapped to
-        stripPrefix: false #if zuul should replace the "/uaa/" segment
-        sensitiveHeaders: 
