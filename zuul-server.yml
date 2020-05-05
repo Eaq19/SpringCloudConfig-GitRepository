@@ -14,7 +14,7 @@ zuul:
     connect-timeout-millis: 20000
     socket-timeout-millis: 20000
     routes:
-      auth-service:
+      product-services:
         path: /product/** #path that will be intercepted
         url: http://localhost:9092 #which url the request will e mapped to
         stripPrefix: false #if zuul should replace the "/uaa/" segment
